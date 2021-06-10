@@ -45,13 +45,17 @@ Microsoft Azure AD & Office365
 
 This guide documents the procedure for importing the OTP 110 authenticator for use with Office365 or Azure AD when the SafeNet Trusted Access IdP *is not* used for Access Management.
 
+.. warning::
+   Before attempting seed import into a Microsoft environment, establish that:
+   
+   * Your seed file adheres to the required format.
+   * You have Global Administrator privileges in Microsoft Azure.   
+
 Microsoft proprietary seed format
 =================================
 
 The "seed" contains the unique programming of each authenticator including it's shared secret and associated attributes. Importantly, Microsoft does not implement best practices seed transport protocols (:abbr:`PSKC (Portable Symmetric Key Container)`) and requires the seed be provided in clear text over :abbr:`CSV (Comma-Separated Values)`. This format is only available from Thales on request using a specific SKU.
 
-.. warning::
-   Before attempting seed import into a Microsoft environment, establish that your seed file adheres to the required format or importing will fail with error(s). 
 
 Seed file modification
 ======================
@@ -59,7 +63,7 @@ Seed file modification
 The seed file provided for 3rd party use in :abbr:`CSV (Comma-Separated Values)` must be further modified to Microsoft requirements. This includes shifting some columns in the :abbr:`CSV (Comma-Separated Values)` while removing others. To simplify this task for the customer a script is provided. This script also updates the authenticator make and model to match current Thales branding.
 
 .. tip::
-   To get the latest version of the Azure script please click :download:`here <https://github.com/JMarkstrom/SafeNet-Trusted-Access/blob/master/OATH_authenticator_import_into_Microsoft_Azure_AD.ps1>` to download it.
+   To get the latest version of the Azure script please click :download:`here <files/OATH_authenticator_import_into_Microsoft_Azure_AD.ps1>` to download it.
 
 To modify the seed:
 
@@ -311,7 +315,7 @@ To modify the seed:
 #. Follow the on-screen instructions presented by the script.
 
 .. tip::
-   To get the latest version of the Nexus script please click :download:`here <files/convert_for_nexus.ps1>` to download it.
+   To get the latest version of the Nexus script please click :download:`here <files/OATH_authenticator_import_into_Nexus_HAG.ps1>` to download it.
 
 
 .. code-block:: sh
